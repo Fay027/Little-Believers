@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Little Believers</title>
+<meta name="theme-color" content="#FFD166">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- HOME SCREEN -->
+  <div id="home-view">
+    <!-- GREETING -->
+    <div class="greeting-banner">
+      <div class="greeting-avatar">🌟</div>
+      <div class="greeting-text">
+        <h1>Assalamu Alaikum!</h1>
+        <p>Welcome, Little Believer! ✨</p>
+      </div>
+    </div>
+
+    <!-- BUBBLES GRID -->
+    <div class="bubbles-grid">
+      <div class="bubble-card bubble-surahs" onclick="openSection('surahs')">
+        <div class="icon-circle">📖</div>
+        <h2>Surahs</h2>
+      </div>
+
+      <div class="bubble-card bubble-duas" onclick="openSection('duas')">
+        <div class="icon-circle">🤲</div>
+        <h2>Duas</h2>
+      </div>
+
+      <div class="bubble-card bubble-stories" onclick="openSection('stories')">
+        <div class="icon-circle">📚</div>
+        <h2>Stories</h2>
+      </div>
+
+      <div class="bubble-card bubble-games" onclick="openSection('games')">
+        <div class="icon-circle">🎮</div>
+        <h2>Games</h2>
+      </div>
+
+      <div class="bubble-card bubble-alphabets" onclick="openSection('alphabets')">
+        <div class="icon-circle" style="font-size: 2rem; font-weight: 700; color: #7B2CBF;">أ ب ت</div>
+        <h2>Arabic Alphabet</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- SURAHS SECTION -->
+<div id="surahs-view" class="sub-view">
+  <!-- 1. SURAH LIST VIEW -->
+  <div id="surah-list-container">
+    <button class="back-btn" onclick="goHome()">🏠 Home</button>
+    <h1 style="color:#457B9D; margin-bottom: 8px;">📖 Surahs</h1>
+    <p style="font-weight:700; color:#7A6F64; margin-bottom: 16px;">Tap a Surah to read and listen!</p>
+
+    <div class="surah-cards-grid" style="display: flex; flex-direction: column; gap: 12px;">
+      
+      <!-- SURAH AL-FATIHA (1) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #457B9D;" onclick="openSurahDetail('fatiha')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">1. Surah Al-Fatiha</h2>
+            <p style="color: #457B9D; font-weight: 700; font-size: 0.9rem;">The Opening • 7 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الفاتحة</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-ASR (103) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #118AB2;" onclick="openSurahDetail('asr')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">103. Surah Al-Asr</h2>
+            <p style="color: #118AB2; font-weight: 700; font-size: 0.9rem;">The Declining Day • 3 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">العصر</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-FIL (105) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #8D7B68;" onclick="openSurahDetail('fil')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">105. Surah Al-Fil</h2>
+            <p style="color: #8D7B68; font-weight: 700; font-size: 0.9rem;">The Elephant • 5 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الفيل</div>
+        </div>
+      </div>
+
+      <!-- SURAH QURAISH (106) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #D4A373;" onclick="openSurahDetail('quraish')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">106. Surah Quraish</h2>
+            <p style="color: #D4A373; font-weight: 700; font-size: 0.9rem;">Quraish • 4 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">قريش</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-MA'UN (107) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #2A9D8F;" onclick="openSurahDetail('maun')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">107. Surah Al-Ma'un</h2>
+            <p style="color: #2A9D8F; font-weight: 700; font-size: 0.9rem;">Small Kindnesses • 7 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الماعون</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-KAWTHAR (108) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #E76F51;" onclick="openSurahDetail('kawthar')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">108. Surah Al-Kawthar</h2>
+            <p style="color: #E76F51; font-weight: 700; font-size: 0.9rem;">Abundance • 3 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الكوثر</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-KAFIRUN (109) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #38B000;" onclick="openSurahDetail('kafirun')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">109. Surah Al-Kafirun</h2>
+            <p style="color: #38B000; font-weight: 700; font-size: 0.9rem;">The Disbelievers • 6 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الكافرون</div>
+        </div>
+      </div>
+
+      <!-- SURAH AN-NASR (110) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #F4A261;" onclick="openSurahDetail('nasr')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">110. Surah An-Nasr</h2>
+            <p style="color: #F4A261; font-weight: 700; font-size: 0.9rem;">The Divine Support • 3 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">النصر</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-MASAD (111) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #A8201A;" onclick="openSurahDetail('masad')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">111. Surah Al-Masad</h2>
+            <p style="color: #A8201A; font-weight: 700; font-size: 0.9rem;">The Palm Fiber • 5 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">المسد</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-IKHLAS (112) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #E8A800;" onclick="openSurahDetail('ikhlas')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">112. Surah Al-Ikhlas</h2>
+            <p style="color: #E8A800; font-weight: 700; font-size: 0.9rem;">The Sincerity • 4 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الإخلاص</div>
+        </div>
+      </div>
+
+      <!-- SURAH AL-FALAQ (113) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #7B2CBF;" onclick="openSurahDetail('falaq')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">113. Surah Al-Falaq</h2>
+            <p style="color: #7B2CBF; font-weight: 700; font-size: 0.9rem;">The Daybreak • 5 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الفلق</div>
+        </div>
+      </div>
+
+      <!-- SURAH AN-NAS (114) -->
+      <div class="fun-card" style="cursor: pointer; border-left: 6px solid #E63946;" onclick="openSurahDetail('nas')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="color: #1D3557; margin-bottom: 4px;">114. Surah An-Nas</h2>
+            <p style="color: #E63946; font-weight: 700; font-size: 0.9rem;">Mankind • 6 Ayahs</p>
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1D3557;">الناس</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+ <!-- SURAH DETAIL VIEW -->
+<div id="surah-detail-container" style="display: none;">
+  <button class="back-btn" onclick="showSurahList()">⬅ Back to Surahs</button>
+  
+  <div class="fun-card" style="margin-bottom: 20px; text-align: center;">
+    <h2 id="active-surah-title" style="color: #1D3557; margin-bottom: 4px;">Surah Title</h2>
+    <p id="active-surah-subtitle" style="color: #457B9D; font-weight: 700; font-size: 0.95rem;">Translation • X Ayahs</p>
+    
+    <!-- BISMILLAH CONTAINER (Make sure this exists!) -->
+    <div id="bismillah-container" style="margin-top: 16px; padding-top: 12px; border-top: 2px dashed #E0E0E0;">
+      <div class="arabic-text" style="font-size: 1.8rem; font-weight: 700; color: #1D3557; margin-bottom: 8px;">
+        بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+      </div>
+      <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+        <button class="play-bubble-btn" style="background: #457B9D; border-color: #222; box-shadow: 0 4px 0px #222; padding: 8px 14px; font-size: 0.9rem;" onclick="playBismillah()">
+          ▶ Play Bismillah
+        </button>
+        <button class="play-bubble-btn" style="background: #E63946; border-color: #9D0208; box-shadow: 0 4px 0px #9D0208; padding: 8px 14px; font-size: 0.9rem;" onclick="pauseAyahAudio()">
+          ⏸ Pause
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ayahs list populates here -->
+  <div id="fatiha-ayah-list"></div>
+</div>
+
+  <!-- Dynamic Ayahs Load Here -->
+  <div id="ayah-list"></div>
+</div>
+
+ <!-- DUAS SECTION -->
+<div id="duas-section" class="sub-view" style="display: none;">
+  
+  <!-- DUA LIST VIEW -->
+  <div id="dua-list-container">
+    <button class="back-btn" onclick="goHome()">🏠 Home</button>
+    <h1 style="color:#2A9D8F; margin-bottom: 8px;">🤲 Daily Duas & Kalimas</h1>
+    <p style="font-weight:700; color:#7A6F64; margin-bottom: 16px;">Select a Dua or Kalima to practice!</p>
+    
+    <div id="duas-card-grid" style="display: flex; flex-direction: column; gap: 12px;"></div>
+  </div>
+
+  <!-- DUA DETAIL VIEW (HIDDEN BY DEFAULT) -->
+  <div id="dua-detail-container" style="display: none;">
+    <button class="back-btn" onclick="closeDuaDetail()">⬅️ Back to Duas</button>
+    <div id="dua-detail-content"></div>
+  </div>
+
+</div>
+
+     <!-- STORIES SECTION -->
+  <div id="stories-view" class="sub-view story-library-container">
+    <button class="back-btn" onclick="goHome()">🏠 Home</button>
+    <h1 style="color:#E63946; margin-bottom: 8px;">📚 Storybook Library</h1>
+    <p class="section-subtitle">Select a storybook to open and read</p>
+
+    <!-- GRID STARTS HERE -->
+    <div class="stories-grid">
+
+      <!-- BOOK 1 -->
+      <div class="book-card" onclick="openBookReader('./books/The Words in my Heart.pdf', 'The Words in My Heart')">
+        <div class="book-cover-container">
+          <img src="./images/words-in-my-heart.png" alt="The Words in My Heart Cover" class="book-cover-img">
+        </div>
+        <h3>The Words in My Heart</h3>
+        <button class="read-btn">Read Story</button>
+      </div>
+
+      <!-- BOOK 2 -->
+      <div class="book-card" onclick="openBookReader('./books/The Pillars of Faith.pdf', 'The Pillars of Faith')">
+        <div class="book-cover-container">
+          <img src="./images/pillars-of-faith.png" alt="The Pillars of Faith Cover" class="book-cover-img">
+        </div>
+        <h3>The Pillars of Faith</h3>
+        <button class="read-btn">Read Story</button>
+      </div>
+
+      <!-- BOOK 3 -->
+      <div class="book-card" onclick="openBookReader('./books/Every Moment a Prayer Learning Duas Through Stories.pdf', 'Every Moment a Prayer')">
+        <div class="book-cover-container">
+          <img src="./images/every-moment-a-prayer.png" alt="Every Moment a Prayer Cover" class="book-cover-img">
+        </div>
+        <h3>Every Moment a Prayer Learning Duas Through Stories</h3>
+        <button class="read-btn">Read Story</button>
+      </div>
+
+      <!-- BOOK 4 -->
+      <div class="book-card" onclick="openBookReader('./books/The Garden of Good Deeds.pdf', 'The Garden of Good Deeds')">
+        <div class="book-cover-container">
+          <img src="./images/garden-of-good-deeds.png" alt="The Garden of Good Deeds Cover" class="book-cover-img">
+        </div>
+        <h3>The Garden of Good Deeds</h3>
+        <button class="read-btn">Read Story</button>
+      </div>
+
+    </div> <!-- GRID ENDS HERE -->
+
+    <!-- Book Reader Modal Overlay -->
+    <div id="reader-modal" class="reader-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modal-book-title">Storybook Reader</h3>
+          <button class="close-btn" onclick="closeBookReader()">&times;</button>
+        </div>
+        
+        <div id="single-page-wrapper">
+          <canvas id="pdf-single-canvas"></canvas>
+        </div>
+
+        <div class="reader-controls">
+          <button id="prev-page-btn" class="back-btn" style="margin:0;" onclick="changePage(-1)">⬅ Previous</button>
+          <span id="page-num-indicator" style="font-weight:700; color:#457B9D;">Page 1</span>
+          <button id="next-page-btn" class="play-bubble-btn" style="margin:0; padding:8px 16px;" onclick="changePage(1)">Next ➡</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GAMES SECTION -->
+  <div id="games-view" class="sub-view">
+    <button class="back-btn" onclick="exitGameMenu()">🏠 Home</button>
+    <h1 style="color:#38B000; margin-bottom: 8px;">🎮 Mini Games</h1>
+    <p style="font-weight:700; color:#7A6F64; margin-bottom: 16px;">Choose a fun game to play and learn!</p>
+
+    <!-- GAME SELECTION MENU -->
+    <div id="game-menu-grid" class="game-selection-grid">
+      <div class="game-select-card" onclick="startFallingGame()">
+        <div class="game-card-icon">🌟</div>
+        <h3>Catch Good Deeds</h3>
+        <p>Catch falling stars & good deeds in your basket!</p>
+      </div>
+
+      <div class="game-select-card" onclick="startMemoryGame()">
+        <div class="game-card-icon">🃏</div>
+        <h3>Arabic Letter Match</h3>
+        <p>Flip cards to find matching Arabic letters!</p>
+      </div>
+
+      <div class="game-select-card" onclick="startWuduGame()">
+        <div class="game-card-icon">🚿</div>
+        <h3>Wudu Step Order</h3>
+        <p>Tap Wudu steps in correct order to earn your badge!</p>
+      </div>
+    </div>
+
+    <!-- GAME PLAY AREA CONTAINER -->
+    <div id="active-game-area" style="display:none;">
+      <button class="back-btn" style="margin-bottom:12px; padding:8px 16px; font-size:0.95rem;" onclick="showGameMenu()">⬅ Back to Games</button>
+      <div id="game-canvas-container"></div>
+    </div>
+  </div>
+
+  <!-- ALPHABET SECTION -->
+  <div id="alphabets-view" class="sub-view">
+    <button class="back-btn" onclick="goHome()">🏠 Home</button>
+    <h1 style="color:#7B2CBF; margin-bottom: 8px;">Arabic Alphabets</h1>
+    <p style="font-weight: 700; color: #7A6F64; margin-bottom: 16px;">Tap any letter to hear its sound!</p>
+
+    <div class="alphabet-grid" id="full-alphabet-grid">
+      <!-- Dynamic 28 Arabic Letters load here -->
+    </div>
+  </div>
+
+</div>
+
+<!-- EXTERNAL JS FILES -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="game.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
