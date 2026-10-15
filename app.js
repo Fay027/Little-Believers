@@ -469,7 +469,7 @@ function openDuaDetail(key) {
 
       <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
         <button class="play-bubble-btn" style="background:#2A9D8F; border-color:#1D6F65; box-shadow:0 4px 0px #1D6F65; padding:12px 20px; font-size:1rem;" onclick="playDuaAudio('${key}')">▶ Play Recitation</button>
-        <button class="play-bubble-btn" style="background:#E63946; border-color:#9D0208; box-shadow:0 4px 0px #9D0208; padding:12px 20px; font-size:1rem;" onclick="stopDuaAudio()">⏸ Stop</button>
+        <button class="play-bubble-btn" style="background:#E63946; border-color:#9D0208; box-shadow:0 4px 0px #9D0208; padding:12px 20px; font-size:1rem;" onclick="pauseDuaAudio()">⏸ Pause</button>
       </div>
     </div>
   `;
@@ -482,23 +482,23 @@ function closeDuaDetail() {
   document.getElementById('dua-list-container').style.display = 'block';
 }
 
-// Play Audio for Dua (Plays Local MP3 Audio)
+// Play Audio for Dua (Plays or Resumes Audio)
 function playDuaAudio(key) {
   const item = duasDatabase[key];
   if (!item || !item.audioPath) return;
 
-  // If clicking play on the same audio while paused, resume it
-  if (activeDuaAudio && activeDuaAudio.src.endsWith(item.audioPath)) {
+  // If clicking play while paused, resume playing right from where it stopped
+  if (activeDuaAudio && activeDuaAudio.src.includes(item.audioPath)) {
     if (activeDuaAudio.paused) {
       activeDuaAudio.play().catch(e => console.error("Error resuming audio:", e));
     }
     return;
   }
 
-  // Stop any currently playing audio
+  // Stop any other currently active audio track before starting a new one
   stopDuaAudio();
 
-  // Load and play the local audio path
+  // Load and play the new audio path
   activeDuaAudio = new Audio(item.audioPath);
   activeDuaAudio.play().catch(e => {
     console.error("Audio playback failed for path:", item.audioPath, e);
@@ -506,7 +506,14 @@ function playDuaAudio(key) {
   });
 }
 
-// Stop Audio
+// Pause Audio (Holds current time position so play resumes naturally)
+function pauseDuaAudio() {
+  if (activeDuaAudio && !activeDuaAudio.paused) {
+    activeDuaAudio.pause();
+  }
+}
+
+// Stop Audio (Used when leaving pages or switching items)
 function stopDuaAudio() {
   if (activeDuaAudio) {
     activeDuaAudio.pause();
