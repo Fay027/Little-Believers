@@ -1,6 +1,74 @@
-/* =========================================================
-   LITTLE BELIEVERS - INTERACTIVE MINI-GAMES ENGINE
-   ========================================================= */
+// Sound Effects Generator for Games
+const GameSounds = {
+  pop() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(400, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.1);
+      gain.gain.setValueAtTime(0.3, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.1);
+    } catch (e) {
+      // Ignore audio context restrictions if blocked before user interaction
+    }
+  },
+  correct() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const notes = [523.25, 659.25, 783.99];
+      notes.forEach((freq, index) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.frequency.setValueAtTime(freq, ctx.currentTime + index * 0.08);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime + index * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + index * 0.08 + 0.2);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + index * 0.08);
+        osc.stop(ctx.currentTime + index * 0.08 + 0.2);
+      });
+    } catch (e) {}
+  },
+  wrong() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(200, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.2);
+      gain.gain.setValueAtTime(0.2, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.2);
+    } catch (e) {}
+  },
+  cheer() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const freqs = [440, 554.37, 659.25, 880];
+      freqs.forEach((f, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.frequency.setValueAtTime(f, ctx.currentTime + i * 0.1);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.1);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.1 + 0.3);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + i * 0.1);
+        osc.stop(ctx.currentTime + i * 0.1 + 0.3);
+      });
+    } catch (e) {}
+  }
+};
 
 let currentActiveGame = null;
 
@@ -42,7 +110,7 @@ function startFallingGame() {
         <span>❤️ Lives: <strong id="falling-lives">3</strong></span>
       </div>
       <div id="play-field" class="play-field">
-        <div id="basket" class="basket">🧺 Basket</div>
+        <div id="basket" class="basket">🧺</div>
       </div>
     </div>
   `;
@@ -114,14 +182,17 @@ function startFallingGame() {
         item.remove();
         if (isGood) {
           score += itemData.score;
+          GameSounds.correct();
         } else {
           lives -= 1;
+          GameSounds.wrong();
         }
         document.getElementById('falling-score').textContent = score;
         document.getElementById('falling-lives').textContent = lives;
 
         if (lives <= 0) {
           clearInterval(gameInterval);
+          GameSounds.cheer();
           showVictoryModal("MashaAllah! 🎉", "You collected " + score + " Stars!", "⭐");
         }
       }
@@ -187,6 +258,7 @@ function startMemoryGame() {
     card.addEventListener('click', () => {
       if (lockBoard || card === firstCard || card.classList.contains('matched')) return;
 
+      GameSounds.pop();
       card.classList.add('flipped');
       card.querySelector('.card-inner').textContent = char;
 
@@ -202,13 +274,16 @@ function startMemoryGame() {
         firstCard.classList.add('matched');
         secondCard.classList.add('matched');
         matches++;
+        GameSounds.correct();
         resetCards();
         if (matches === selectedLetters.length) {
           setTimeout(() => {
+            GameSounds.cheer();
             showVictoryModal("MashaAllah! 🎉", "Well done! You matched all the Arabic letters!", "✨");
           }, 300);
         }
       } else {
+        GameSounds.wrong();
         setTimeout(() => {
           firstCard.classList.remove('flipped');
           secondCard.classList.remove('flipped');
@@ -276,11 +351,12 @@ function startWuduGame() {
       card.className = 'wudu-card';
       card.innerHTML = `
         <div style="font-size:2.2rem;">${item.icon}</div>
-        <div style="font-family:'Fredoka'; font-size:1rem; margin-top:4px;">${item.name}</div>
+        <div style="font-family:'Fredoka'; font-size:1.0rem; margin-top:4px;">${item.name}</div>
       `;
 
       card.addEventListener('click', () => {
         if (item.step === wuduSteps[currentStepIndex].step) {
+          GameSounds.correct();
           card.classList.add('correct-step');
           currentStepIndex++;
           if (currentStepIndex < wuduSteps.length) {
@@ -288,10 +364,12 @@ function startWuduGame() {
             document.getElementById('wudu-target-name').textContent = wuduSteps[currentStepIndex].name;
           } else {
             setTimeout(() => {
+              GameSounds.cheer();
               showWuduBadgeModal();
             }, 300);
           }
         } else {
+          GameSounds.wrong();
           card.classList.add('wrong-step');
           setTimeout(() => card.classList.remove('wrong-step'), 600);
         }

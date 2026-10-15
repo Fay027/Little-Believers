@@ -317,18 +317,18 @@ const duasDatabase = {
   },
   durood1: {
     id: 3,
-    title: "Sending Blessings upon the Prophet (Short)",
-    arabic: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ",
-    transliteration: "Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad",
-    meaning: "O Allah, send blessings upon Muhammad and upon the family of Muhammad.",
+    title: "Durood-e-Ibrahim (Part 1)",
+    arabic: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+    transliteration: "Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad, kama sallaita 'ala Ibrahima wa 'ala ali Ibrahima, innaka Hamidun Majid",
+    meaning: "O Allah, bestow Your favor on Muhammad and on the family of Muhammad as You have bestowed Your favor on Ibrahim and on the family of Ibrahim, You are Praiseworthy, Most Glorious.",
     audioPath: "audio/Durood_1.mp3"
   },
   durood2: {
     id: 4,
-    title: "Durood Ibrahim",
-    arabic: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
-    transliteration: "Allahumma salli 'ala Muhammadin wa 'ala ali Muhammadin, kama sallaita 'ala Ibrahima wa 'ala ali Ibrahima, innaka Hamidun Majid",
-    meaning: "O Allah, send blessings upon Muhammad and the family of Muhammad, as You sent blessings upon Ibrahim and the family of Ibrahim. Indeed, You are Praiseworthy and Glorious.",
+    title: "Durood-e-Ibrahim (Part 2)",
+    arabic: "اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+    transliteration: "Allahumma barik 'ala Muhammadin wa 'ala ali Muhammad, kama barakta 'ala Ibrahima wa 'ala ali Ibrahima, innaka Hamidun Majid",
+    meaning: "O Allah, bless Muhammad and the family of Muhammad as You have blessed Ibrahim and on the family of Ibrahim, You are Praiseworthy, Most Glorious.",
     audioPath: "audio/Durood_2.mp3"
   },
   beforeEating: {
