@@ -334,9 +334,9 @@ const duasDatabase = {
   beforeEating: {
     id: 5,
     title: "Before Eating",
-    arabic: "بِسْمِ اللَّهِ",
-    transliteration: "Bismillah",
-    meaning: "In the name of Allah.",
+    arabic: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ",
+    transliteration: "Bismillahi wa 'ala barakatillah",
+    meaning: "In the name of Allah and with the blessings of Allah.",
     audioPath: "audio/Before_Eating.mp3"
   },
   afterEating: {
@@ -373,7 +373,7 @@ const duasDatabase = {
   },
   beforeEnteringToilet: {
     id: 10,
-    title: "Before Entering the Bathroom",
+    title: "Before Entering the Toilet",
     arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
     transliteration: "Allahumma inni a'udhu bika minal-khubuthi wal-khaba'ith",
     meaning: "O Allah, I seek refuge in You from evil and evil spirits.",
@@ -381,7 +381,7 @@ const duasDatabase = {
   },
   afterLeavingToilet: {
     id: 11,
-    title: "After Leaving the Bathroom",
+    title: "After Leaving the Toilet",
     arabic: "غُفْرَانَكَ",
     transliteration: "Ghufranaka",
     meaning: "I ask You (Allah) for forgiveness.",
@@ -398,8 +398,8 @@ const duasDatabase = {
   beforeSleeping: {
     id: 13,
     title: "Before Sleeping",
-    arabic: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
-    transliteration: "Bismika-llahumma amutu wa ahya",
+    arabic: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا",
+    transliteration: "Allahumma bismika amootu wa ahya",
     meaning: "In Your name, O Allah, I die and I live.",
     audioPath: "audio/Before_Sleeping.mp3"
   },
