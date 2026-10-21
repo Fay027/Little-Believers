@@ -310,9 +310,9 @@ const duasDatabase = {
   shahada: {
     id: 2,
     title: "Testimony of Faith",
-    arabic: "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
-    transliteration: "Ash-hadu an la ilaha illallahu wa ash-hadu anna Muhammadan 'abduhu wa rasuluh",
-    meaning: "I bear witness that there is no deity worthy of worship except Allah, and I bear witness that Muhammad is His servant and Messenger.",
+    arabic: "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+    transliteration: "Ash-hadu an la ilaha illallahu, wahdahu la sharika lah, wa ash-hadu anna Muhammadan 'abduhu wa rasuluh",
+    meaning: "I bear witness that there is no deity worthy of worship except Allah, alone, without partner and I bear witness that Muhammad is His servant and Messenger.",
     audioPath: "audio/Shahada.mp3"
   },
   durood1: {
@@ -342,17 +342,17 @@ const duasDatabase = {
   afterEating: {
     id: 6,
     title: "After Eating",
-    arabic: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
-    transliteration: "Alhamdu lillahil-ladhi at'amani hadha wa razaqanihi min ghairi haulin minni wa la quwwah",
-    meaning: "Praise be to Allah who has fed me this and provided it for me without any strength or power on my part.",
+    arabic: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ",
+    transliteration: "Alhamdulillahil-ladhi at‘amana wa saqana, wa ja‘alana minal-muslimin.",
+    meaning: "Praise be to Allah who has fed us and given us drink, and made us Muslims.",
     audioPath: "audio/After_Eating.mp3"
   },
   beforeWudhu: {
     id: 7,
     title: "Before Wudhu",
-    arabic: "بِسْمِ اللَّهِ",
-    transliteration: "Bismillah",
-    meaning: "In the name of Allah.",
+    arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    transliteration: "Bismillah hir rahman nir raheem",
+    meaning: "In the name of Allah, the Most Gracious, the Most Merciful.",
     audioPath: "audio/Before_Wudhu.mp3"
   },
   afterWudhu1: {
@@ -361,7 +361,7 @@ const duasDatabase = {
     arabic: "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
     transliteration: "Ash-hadu an la ilaha illallahu wahdahu la sharika lahu wa ash-hadu anna Muhammadan 'abduhu wa rasuluh",
     meaning: "I testify that there is no deity worthy of worship except Allah alone, without partner, and I testify that Muhammad is His servant and Messenger.",
-    audioPath: "audio/After_Wudhu.mp3"
+    audioPath: "audio/After_Wudhu2.mp3"
   },
   afterWudhu2: {
     id: 9,
@@ -369,7 +369,7 @@ const duasDatabase = {
     arabic: "اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ",
     transliteration: "Allahummaj-'alni minat-tawwabina waj-'alni minal-mutatahhirin",
     meaning: "O Allah, make me among those who turn to You in repentance, and make me among those who purify themselves.",
-    audioPath: "audio/After_Wudhu2.mp3"
+    audioPath: "audio/After_Wudhu.mp3"
   },
   beforeEnteringToilet: {
     id: 10,
@@ -385,7 +385,7 @@ const duasDatabase = {
     arabic: "غُفْرَانَكَ",
     transliteration: "Ghufranaka",
     meaning: "I ask You (Allah) for forgiveness.",
-    audioPath: "audio/After_Leaving_Toilet.mp3"
+    audioPath: "audio/After_leaving_toilet.mp3"
   },
   beforeLeavingHome: {
     id: 12,
